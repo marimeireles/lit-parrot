@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 import gc
 import json
 import shutil
@@ -51,7 +52,7 @@ def copy_weights(state_dict, hf_weights, dtype=torch.float32):
             to_name = to_name.format(block_id)
         else:
             to_name = weight_map[name]
-        print(f"{name} {tuple(param.shape)} ⟶ {to_name} {tuple(state_dict[to_name].shape)}")
+        print(f"{name} {tuple(param.shape)} -> {to_name} {tuple(state_dict[to_name].shape)}")
         state_dict[to_name].copy_(param)
 
 
